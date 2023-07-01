@@ -6,7 +6,8 @@ test.describe.parallel("API Testing", () => {
   
   test("simple API Test - Assert Response Status", async ({ request }) => {
 
-    const response = await request.get(`${baseUrl}/users?page=2`)
+    const response = await request.get(`${baseUrl}/users?page=2`);
+    expect (response.status()).toBe(400);
 
   });
   
