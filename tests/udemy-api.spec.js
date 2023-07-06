@@ -27,7 +27,8 @@ test.describe.parallel("API Testing", () => {
     const responseBody = JSON.parse(await response.text());
     expect(response.status()).toBe(200);
     expect(responseBody.data.id).toBe(1);
-    expect(responseBody.data.first_name).toContainText("George");
+    expect(responseBody.data.first_name).toBe("George");
+    expect(responseBody.data.last_name).toBe("Bluth");
     console.log(responseBody);
 
   });
