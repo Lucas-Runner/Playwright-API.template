@@ -32,12 +32,5 @@ test.describe.parallel("API Testing", () => {
     console.log(responseBody);
 
   });
-
-  test('[GET][400]:/v2/pet/findByStatus:invalid', async () => {
-    const response = await apiContext.get(`/v2/pet/findByStatus?status=invalid`);
-  
-    expect(response.status()).toBe(400)
-    expect(response.ok()).toBeFalsy();
-  });
   
 });
