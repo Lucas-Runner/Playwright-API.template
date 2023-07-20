@@ -60,6 +60,8 @@ test.describe.parallel("API Testing", () => {
       const responseBody = JSON.parse(await response.text());
       expect (response.status()).toBe(200);
       expect (responseBody.token).toBeTruthy();
+      //console.log(response);
+      //console.log(responseBody);
       
     });
 
