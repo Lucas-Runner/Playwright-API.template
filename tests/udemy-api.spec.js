@@ -10,7 +10,7 @@ test.describe.parallel("API Testing", () => {
         expect(response.status()).toBe(200);
 
         const responseBody = JSON.parse(await response.text());
-        console.log(responseBody);
+        //console.log(responseBody);
 
     });
 
@@ -29,7 +29,7 @@ test.describe.parallel("API Testing", () => {
         expect(responseBody.data.id).toBe(1);
         expect(responseBody.data.first_name).toBe("George");
         expect(responseBody.data.last_name).toBe("Bluth");
-        console.log(responseBody);
+        //console.log(responseBody);
 
     });
 
@@ -65,4 +65,16 @@ test.describe.parallel("API Testing", () => {
       
     });
 
+    test("POST request -Login Failure", async ({request}) => {
+      const response = await request.post(`${baseUrl}/login`, {
+        data:{
+          email: "peter@klaven",
+        }
+      });
+
+      const responseBody = JSON.parse(await response.text());
+      expect (response.status()).toBe(400);
+      expect (responseBody.error).toBe("Missing password");
+
+    });
 });
