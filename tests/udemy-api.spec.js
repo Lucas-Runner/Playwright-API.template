@@ -78,7 +78,7 @@ test.describe.parallel("API Testing", () => {
 
     });
 
-    test.only("PUT Request - Update User", async ({request}) => {
+    test("PUT Request - Update User", async ({request}) => {
       const response = await request.put(`${baseUrl}/users/2`, {
         data:{
           name: "New Name",
@@ -93,4 +93,17 @@ test.describe.parallel("API Testing", () => {
       expect (responseBody.updatedAt).toBeTruthy();
 
     });
+
+    test.only("PUT Request - Update User Check", async ({request}) => {
+
+      const response = await request.put(`${baseUrl}/users/2`);
+
+      const responseBody = JSON.parse(await response.text());
+      expect (response.status()).toBe(200);
+      expect (responseBody.name).toBe("morpheus");
+      expect (responseBody.job).toBe("zion resident");
+
+    });
+
+
 });
