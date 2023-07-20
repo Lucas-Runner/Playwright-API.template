@@ -42,6 +42,7 @@ test.describe.parallel("API Testing", () => {
       });
 
       const responseBody = JSON.parse(await response.text());
+        expect(response.status()).toBe(201);
         expect(responseBody.id).toBe(1000);
         expect(responseBody.createdAt).toBeTruthy();
 
