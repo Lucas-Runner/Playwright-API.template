@@ -33,7 +33,7 @@ test.describe.parallel("API Testing", () => {
 
     });
 
-    test("POST request - Create New User", async ({request}) => {
+    test.only("POST request - Create New User", async ({request}) => {
 
       const response = await request.post(`${baseUrl}/users`, {
         data:{
@@ -41,7 +41,9 @@ test.describe.parallel("API Testing", () => {
         }
       });
 
-      
+      const responseBody = JSON.parse(await response.text());
+        expect(responseBody.id).toBe(1000);
+        expect(responseBody.createdAt).toBeTruthy();
 
     });
 
