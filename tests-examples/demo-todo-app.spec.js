@@ -87,16 +87,11 @@ test.describe.parallel("API Testing", () => {
 
     });
 
-    test.only("PUT Request - Update User Check", async ({request}) => {
+    test("DELETE request - Delete User", async ({request}) => {
 
-      const response = await request.put(`${baseUrl}/users/2`);
-
-      const responseBody = JSON.parse(await response.text());
-      expect (response.status()).toBe(200);
-      expect (responseBody.name).toBe("morpheus");
-      expect (responseBody.job).toBe("zion resident");
+      const response = await request.delete(`${baseUrl}/users/2`);
+      expect(response.status()).toBe(204);
 
     });
-
 
 });
