@@ -1,4 +1,4 @@
 # Udemy
-Playwright framework API automation template for fast starts
+Playwright framework template for automated API Tests
 
 
