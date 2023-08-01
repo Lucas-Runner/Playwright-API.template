@@ -1,4 +1,4 @@
 # Udemy
-Repository for some Udemy exercises
+Playwright framework template for automated API Tests
 
 
