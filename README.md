@@ -1,4 +1,4 @@
 # Udemy
-Repository for some Udemy exercises
+Playwright framework API automation template for fast starts
 
 
